@@ -1,0 +1,92 @@
+theripper pivotal tracker password
+
+
+Last login: Tue May 24 12:30:06 on ttys000
+jack-youngs-macbook-pro:~ youngbuck14188$ cd desktop
+jack-youngs-macbook-pro:desktop youngbuck14188$ ls
+01.wmv.download					John Young Resume.docx				Test java					construction-ipad
+499 labs					Prag						Viewier						golfenergy
+CertificateSigningRequest.certSigningRequest	Pragmatic					apps						jGRASP.app
+GMU_Class-3.mobileprovision			Random						cmd stuff.png					key_backup
+Java 206-4					Resume Drafts 2011				collection.sparseimage				pass.rtf
+jack-youngs-macbook-pro:desktop youngbuck14188$ cd construction-ipad/
+jack-youngs-macbook-pro:construction-ipad youngbuck14188$ ls
+Account					ForemanTests				ProductivityEditViewController.xib	Team					TimesheetListView.xib
+Common					Images					ProductivityViewController.h		TeamSelectTraining.h			TimesheetListViewController.h
+Employee				Model					ProductivityViewController.m		TeamSelectTraining.m			TimesheetListViewController.m
+Foreman					ProductivityEditViewController.h	Settings				TeamSelectTraining.xib			Toolkit
+Foreman.xcodeproj			ProductivityEditViewController.m	Skills					Timesheet
+jack-youngs-macbook-pro:construction-ipad youngbuck14188$ ls -a
+.					Employee				ProductivityEditViewController.h	Skills					TimesheetListView.xib
+..					Foreman					ProductivityEditViewController.m	Team					TimesheetListViewController.h
+.git					Foreman.xcodeproj			ProductivityEditViewController.xib	TeamSelectTraining.h			TimesheetListViewController.m
+.gitignore				ForemanTests				ProductivityViewController.h		TeamSelectTraining.m			Toolkit
+Account					Images					ProductivityViewController.m		TeamSelectTraining.xib
+Common					Model					Settings				Timesheet
+jack-youngs-macbook-pro:construction-ipad youngbuck14188$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   ProductivityEditViewController.h
+#	new file:   ProductivityEditViewController.m
+#	new file:   ProductivityEditViewController.xib
+#	new file:   ProductivityViewController.h
+#	new file:   ProductivityViewController.m
+#	new file:   TeamSelectTraining.h
+#	new file:   TeamSelectTraining.m
+#	new file:   TeamSelectTraining.xib
+#
+# Changed but not updated:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   Account/ViewRoleMapping.plist
+#	modified:   Foreman.xcodeproj/project.pbxproj
+#	modified:   Model/InitialDataLoader.m
+#	modified:   Model/Skill+Model.m
+#	modified:   Model/Skill.m
+#	modified:   ProductivityEditViewController.h
+#	modified:   ProductivityEditViewController.m
+#	modified:   ProductivityEditViewController.xib
+#	modified:   ProductivityViewController.h
+#	modified:   ProductivityViewController.m
+#	modified:   Team/TeamEditViewController.xib
+#	modified:   Team/TeamTransferProject.xib
+#	modified:   TeamSelectTraining.h
+#	modified:   TeamSelectTraining.xib
+#
+jack-youngs-macbook-pro:construction-ipad youngbuck14188$ git add -A .
+jack-youngs-macbook-pro:construction-ipad youngbuck14188$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   Account/ViewRoleMapping.plist
+#	modified:   Foreman.xcodeproj/project.pbxproj
+#	modified:   Model/InitialDataLoader.m
+#	modified:   Model/Skill+Model.m
+#	modified:   Model/Skill.m
+#	new file:   ProductivityEditViewController.h
+#	new file:   ProductivityEditViewController.m
+#	new file:   ProductivityEditViewController.xib
+#	new file:   ProductivityViewController.h
+#	new file:   ProductivityViewController.m
+#	modified:   Team/TeamEditViewController.xib
+#	modified:   Team/TeamTransferProject.xib
+#	new file:   TeamSelectTraining.h
+#	new file:   TeamSelectTraining.m
+#	new file:   TeamSelectTraining.xib
+#
+jack-youngs-macbook-pro:construction-ipad youngbuck14188$ git commit -am "Added Productivity"
+[master 977770a] Added Productivity
+ 15 files changed, 835 insertions(+), 152 deletions(-)
+ create mode 100644 ProductivityEditViewController.h
+ create mode 100644 ProductivityEditViewController.m
+ create mode 100644 ProductivityEditViewController.xib
+ create mode 100644 ProductivityViewController.h
+ create mode 100644 ProductivityViewController.m
+ create mode 100644 TeamSelectTraining.h
+ create mode 100644 TeamSelectTraining.m
+ create mode 100644 TeamSelectTraining.xib
+jack-youngs-macbook-pro:construction-ipad youngbuck14188$ 
