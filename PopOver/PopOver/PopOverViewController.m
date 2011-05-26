@@ -21,6 +21,7 @@
     [infoView release];
     
     NSLog(@"Test log if the pop over worked");
+    NSLog(@"Test log if the pop over worked");
     
 }
 
