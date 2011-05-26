@@ -20,6 +20,8 @@
     [pop setPopoverContentSize:CGSizeMake(320, 400)];
     [infoView release];
     
+    NSLog(@"Test log if the pop over worked");
+    
 }
 
 
