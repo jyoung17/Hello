@@ -10,6 +10,19 @@
 
 @implementation FcalendarViewController
 @synthesize dataArray, dataDictionary;
+//@synthesize eventcalendarviewcontrollerVC;
+@synthesize eventlistVC;
+
+
+- (IBAction) eventButton
+{
+     [[self navigationController] pushViewController:eventlistVC animated:YES];
+}
+
+
+
+
+
 
 
 

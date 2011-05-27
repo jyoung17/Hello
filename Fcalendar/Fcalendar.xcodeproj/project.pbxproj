@@ -36,6 +36,8 @@
 		0F1EA46B138EA243000A61D4 /* TKCalendarMonthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1EA46A138EA243000A61D4 /* TKCalendarMonthTableViewController.m */; };
 		0F1EA47D138EA5B6000A61D4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F1EA47C138EA5B6000A61D4 /* QuartzCore.framework */; };
 		0F1EA47F138EA692000A61D4 /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F1EA47E138EA692000A61D4 /* TapkuLibrary.bundle */; };
+		0F1EA4A7138EAA9E000A61D4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F1EA4A6138EAA9E000A61D4 /* EventKit.framework */; };
+		0F1EA4A9138EAAA5000A61D4 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F1EA4A8138EAAA5000A61D4 /* EventKitUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		0F1EA46A138EA243000A61D4 /* TKCalendarMonthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCalendarMonthTableViewController.m; sourceTree = "<group>"; };
 		0F1EA47C138EA5B6000A61D4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0F1EA47E138EA692000A61D4 /* TapkuLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapkuLibrary.bundle; sourceTree = "<group>"; };
+		0F1EA4A6138EAA9E000A61D4 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		0F1EA4A8138EAAA5000A61D4 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F1EA4A9138EAAA5000A61D4 /* EventKitUI.framework in Frameworks */,
+				0F1EA4A7138EAA9E000A61D4 /* EventKit.framework in Frameworks */,
 				0F1EA47D138EA5B6000A61D4 /* QuartzCore.framework in Frameworks */,
 				0F1EA33A138E9BB9000A61D4 /* UIKit.framework in Frameworks */,
 				0F1EA33C138E9BB9000A61D4 /* Foundation.framework in Frameworks */,
@@ -145,6 +151,8 @@
 		0F1EA338138E9BB9000A61D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F1EA4A8138EAAA5000A61D4 /* EventKitUI.framework */,
+				0F1EA4A6138EAA9E000A61D4 /* EventKit.framework */,
 				0F1EA47C138EA5B6000A61D4 /* QuartzCore.framework */,
 				0F1EA339138E9BB9000A61D4 /* UIKit.framework */,
 				0F1EA33B138E9BB9000A61D4 /* Foundation.framework */,
@@ -532,6 +540,7 @@
 				0F1EA36E138E9BBA000A61D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F1EA36F138E9BBA000A61D4 /* Build configuration list for PBXNativeTarget "FcalendarTests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +549,7 @@
 				0F1EA371138E9BBA000A61D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
