@@ -17,8 +17,11 @@
 
 @synthesize window;
 @synthesize managedObjectContext;
+@synthesize fetchedResultsController;
 
-@synthesize tf;
+//@synthesize tf;
+
+@synthesize navigationController;
 
 
 //my own getter method
@@ -98,7 +101,7 @@
 {
     NSLog(@"U pressed the button");
     NSLog(@"----------------------");
-    [self soutput];
+   // [self soutput];
 }
 
 - (void) colsoleOutputData
@@ -123,22 +126,22 @@
 	
 }
 
--(void) soutput
-{
-
-    NSMutableArray *namepool = [NSMutableArray array];
-    
-    
-    NSFetchRequest* _fR = [[NSFetchRequest alloc] init];
-    NSEntityDescription *en = [NSEntityDescription entityForName:@"Child" inManagedObjectContext:self.managedObjectContext];
-    [_fR setEntity:en];
-    NSArray* _childs = [self.managedObjectContext executeFetchRequest:_fR error:nil];
-   for (int i = 0; i < [_childs count]; i++) {
-        Child* _child = (Child*)[_childs objectAtIndex:i];
-       //nn[i] = _child.Name;
-       [namepool addObject:_child.Name];
-   }
-    
+//-(void) soutput
+//{
+//
+//    NSMutableArray *namepool = [NSMutableArray array];
+//    
+//    
+//    NSFetchRequest* _fR = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *en = [NSEntityDescription entityForName:@"Child" inManagedObjectContext:self.managedObjectContext];
+//    [_fR setEntity:en];
+//    NSArray* _childs = [self.managedObjectContext executeFetchRequest:_fR error:nil];
+//   for (int i = 0; i < [_childs count]; i++) {
+//        Child* _child = (Child*)[_childs objectAtIndex:i];
+//       //nn[i] = _child.Name;
+//       [namepool addObject:_child.Name];
+//   }
+//    
     
     
     //NSLog(@"Your string array is about %@", namepool);
@@ -149,12 +152,13 @@
 //    NSLog(@" person 1 :%@",[namepool objectAtIndex:4]);
     
     
-    
-}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+     [window addSubview:navigationController.view];  ///
+    
     [self.window makeKeyAndVisible];
     
     [self uploadData];
@@ -207,6 +211,7 @@
 {
     [window release];
     [managedObjectContext release];
+     [navigationController release];
     [super dealloc];
 }
 

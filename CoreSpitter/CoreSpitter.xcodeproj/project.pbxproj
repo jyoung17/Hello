@@ -19,6 +19,8 @@
 		0FC397D7139AAA6B006689C7 /* Child.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC397D6139AAA6B006689C7 /* Child.m */; };
 		0FC397DB139AAAB7006689C7 /* Mother.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC397DA139AAAB7006689C7 /* Mother.m */; };
 		0FC397E1139AAAF2006689C7 /* Father.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC397E0139AAAF2006689C7 /* Father.m */; };
+		0FC39813139ACF2C006689C7 /* SecondView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC39811139ACF2C006689C7 /* SecondView.m */; };
+		0FC39814139ACF2C006689C7 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC39812139ACF2C006689C7 /* SecondView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,9 @@
 		0FC397DA139AAAB7006689C7 /* Mother.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mother.m; sourceTree = "<group>"; };
 		0FC397DF139AAAF2006689C7 /* Father.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Father.h; sourceTree = "<group>"; };
 		0FC397E0139AAAF2006689C7 /* Father.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Father.m; sourceTree = "<group>"; };
+		0FC39810139ACF2C006689C7 /* SecondView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondView.h; sourceTree = "<group>"; };
+		0FC39811139ACF2C006689C7 /* SecondView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondView.m; sourceTree = "<group>"; };
+		0FC39812139ACF2C006689C7 /* SecondView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +97,9 @@
 			children = (
 				0F044918139AA84100ABFA5F /* CoreSpitterAppDelegate.h */,
 				0F044919139AA84100ABFA5F /* CoreSpitterAppDelegate.m */,
+				0FC39810139ACF2C006689C7 /* SecondView.h */,
+				0FC39811139ACF2C006689C7 /* SecondView.m */,
+				0FC39812139ACF2C006689C7 /* SecondView.xib */,
 				0F044925139AA88000ABFA5F /* Family.xcdatamodeld */,
 				0F04491B139AA84100ABFA5F /* MainWindow.xib */,
 				0F044910139AA84100ABFA5F /* Supporting Files */,
@@ -173,6 +181,7 @@
 			files = (
 				0F044914139AA84100ABFA5F /* InfoPlist.strings in Resources */,
 				0F04491D139AA84100ABFA5F /* MainWindow.xib in Resources */,
+				0FC39814139ACF2C006689C7 /* SecondView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +198,7 @@
 				0FC397D7139AAA6B006689C7 /* Child.m in Sources */,
 				0FC397DB139AAAB7006689C7 /* Mother.m in Sources */,
 				0FC397E1139AAAF2006689C7 /* Father.m in Sources */,
+				0FC39813139ACF2C006689C7 /* SecondView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
