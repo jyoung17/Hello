@@ -18,6 +18,8 @@
 @synthesize window;
 @synthesize managedObjectContext;
 
+@synthesize tf;
+
 
 //my own getter method
 - (NSManagedObjectContext*) managedObjectContext
@@ -52,8 +54,14 @@
 {
 	Father* _father = (Father*)[NSEntityDescription insertNewObjectForEntityForName:@"Father" inManagedObjectContext:self.managedObjectContext];
     _father.Name = @"Thomas";
+    
+    
     Mother* _mother = (Mother*)[NSEntityDescription insertNewObjectForEntityForName:@"Mother" inManagedObjectContext:self.managedObjectContext];
     _mother.Name = @"Mary";
+    
+    Mother* _mother2 = (Mother*)[NSEntityDescription insertNewObjectForEntityForName:@"Mother" inManagedObjectContext:self.managedObjectContext];
+    _mother2.Name = @"Carol";
+    
     Child* _child1 = (Child*)[NSEntityDescription insertNewObjectForEntityForName:@"Child" inManagedObjectContext:self.managedObjectContext];
     _child1.Name = @"Tommy";
 	Child* _child2 = (Child*)[NSEntityDescription insertNewObjectForEntityForName:@"Child" inManagedObjectContext:self.managedObjectContext];
@@ -70,12 +78,14 @@
 	[_father addChildrenObject:_child2];
 	[_father addChildrenObject:_child3];
 	[_father addChildrenObject:_child4];
+    [_father addChildrenObject:_child5];
 	
     
     [_mother addChildrenObject:_child1];
     [_mother addChildrenObject:_child2];
     [_mother addChildrenObject:_child3];
     [_mother addChildrenObject:_child4];
+    [_mother addChildrenObject:_child5];
 	
 //	if ([self.managedObjectContext hasChanges])
 //	{
@@ -88,7 +98,7 @@
 {
     NSLog(@"U pressed the button");
     NSLog(@"----------------------");
-    [self colsoleOutputData];
+    [self soutput];
 }
 
 - (void) colsoleOutputData
@@ -111,6 +121,35 @@
         
 	}
 	
+}
+
+-(void) soutput
+{
+
+    NSMutableArray *namepool = [NSMutableArray array];
+    
+    
+    NSFetchRequest* _fR = [[NSFetchRequest alloc] init];
+    NSEntityDescription *en = [NSEntityDescription entityForName:@"Child" inManagedObjectContext:self.managedObjectContext];
+    [_fR setEntity:en];
+    NSArray* _childs = [self.managedObjectContext executeFetchRequest:_fR error:nil];
+   for (int i = 0; i < [_childs count]; i++) {
+        Child* _child = (Child*)[_childs objectAtIndex:i];
+       //nn[i] = _child.Name;
+       [namepool addObject:_child.Name];
+   }
+    
+    
+    
+    //NSLog(@"Your string array is about %@", namepool);
+    
+//    NSLog(@" person 1 :%@",[namepool objectAtIndex:1]);
+//    NSLog(@" person 1 :%@",[namepool objectAtIndex:2]);
+//    NSLog(@" person 1 :%@",[namepool objectAtIndex:3]);
+//    NSLog(@" person 1 :%@",[namepool objectAtIndex:4]);
+    
+    
+    
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

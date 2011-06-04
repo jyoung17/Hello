@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import	<CoreData/CoreData.h> 
 
-@interface CoreSpitterAppDelegate : NSObject <UIApplicationDelegate> {
+@interface CoreSpitterAppDelegate : NSObject <UIApplicationDelegate, UITextFieldDelegate> {
     UIWindow *window;
 	NSManagedObjectContext* managedObjectContext;
+    
+    IBOutlet UITextField *tf;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -22,5 +24,9 @@
 
 
 -(IBAction)pressme;
+
+-(void) soutput;
+
+@property (nonatomic, retain) IBOutlet UITextField *tf;
 
 @end

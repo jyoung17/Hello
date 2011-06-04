@@ -61,7 +61,7 @@
 		0F0448FA139AA84100ABFA5F = {
 			isa = PBXGroup;
 			children = (
-				0F044923139AA86100ABFA5F /* CoreData.framework */,
+				0FC397EF139AB3C1006689C7 /* Entities */,
 				0F04490F139AA84100ABFA5F /* CoreSpitter */,
 				0F044908139AA84100ABFA5F /* Frameworks */,
 				0F044906139AA84100ABFA5F /* Products */,
@@ -79,6 +79,7 @@
 		0F044908139AA84100ABFA5F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F044923139AA86100ABFA5F /* CoreData.framework */,
 				0F044909139AA84100ABFA5F /* UIKit.framework */,
 				0F04490B139AA84100ABFA5F /* Foundation.framework */,
 				0F04490D139AA84100ABFA5F /* CoreGraphics.framework */,
@@ -94,12 +95,6 @@
 				0F044925139AA88000ABFA5F /* Family.xcdatamodeld */,
 				0F04491B139AA84100ABFA5F /* MainWindow.xib */,
 				0F044910139AA84100ABFA5F /* Supporting Files */,
-				0FC397D5139AAA6B006689C7 /* Child.h */,
-				0FC397D6139AAA6B006689C7 /* Child.m */,
-				0FC397D9139AAAB7006689C7 /* Mother.h */,
-				0FC397DA139AAAB7006689C7 /* Mother.m */,
-				0FC397DF139AAAF2006689C7 /* Father.h */,
-				0FC397E0139AAAF2006689C7 /* Father.m */,
 			);
 			path = CoreSpitter;
 			sourceTree = "<group>";
@@ -113,6 +108,20 @@
 				0F044916139AA84100ABFA5F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0FC397EF139AB3C1006689C7 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				0FC397D5139AAA6B006689C7 /* Child.h */,
+				0FC397D6139AAA6B006689C7 /* Child.m */,
+				0FC397D9139AAAB7006689C7 /* Mother.h */,
+				0FC397DA139AAAB7006689C7 /* Mother.m */,
+				0FC397DF139AAAF2006689C7 /* Father.h */,
+				0FC397E0139AAAF2006689C7 /* Father.m */,
+			);
+			name = Entities;
+			path = CoreSpitter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
