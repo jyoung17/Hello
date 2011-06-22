@@ -9,14 +9,24 @@
 #import <UIKit/UIKit.h>
 #import	<CoreData/CoreData.h> 
 
-@interface SecondView : UIViewController {
-    NSManagedObjectContext* managedObjectContext;
+@interface SecondView : UIViewController  <NSFetchedResultsControllerDelegate, UITextFieldDelegate>{
+ 
+   	NSManagedObjectContext* managedObjectContext;
+    
+    UITextField *nameField;
+    UITextView *resultServerTextView;
+    
 }
 
+@property (nonatomic, retain) NSManagedObjectContext* managedObjectContext;
 
-@property (nonatomic, retain, readonly) NSManagedObjectContext* managedObjectContext;
 
-- (void) OutputData;
+@property(nonatomic, retain) IBOutlet UITextField *nameField;
+-(IBAction)entername;
 
 - (IBAction)pressmed;
+
+@property (nonatomic, retain) IBOutlet UITextView *resultServerTextView;
+
+
 @end

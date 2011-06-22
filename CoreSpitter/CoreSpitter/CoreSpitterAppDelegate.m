@@ -17,10 +17,6 @@
 
 @synthesize window;
 @synthesize managedObjectContext;
-@synthesize fetchedResultsController;
-
-//@synthesize tf;
-
 @synthesize navigationController;
 
 
@@ -35,8 +31,6 @@
         NSError *error;
 		NSPersistentStoreCoordinator* persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc]
 																	initWithManagedObjectModel:[NSManagedObjectModel mergedModelFromBundles:nil]];
-		
-		
 		
 		if (![persistentStoreCoordinator //<label id="code.app.del.psc.config"/>
 			  addPersistentStoreWithType:NSSQLiteStoreType 
@@ -75,13 +69,16 @@
     _child4.Name = @"Hannah";
     Child* _child5 = (Child*)[NSEntityDescription insertNewObjectForEntityForName:@"Child" inManagedObjectContext:self.managedObjectContext];
     _child5.Name = @"Alexa";
+    Child* _child6 = (Child*)[NSEntityDescription insertNewObjectForEntityForName:@"Child" inManagedObjectContext:self.managedObjectContext];
+    _child6.Name = @"Katt";
 	
-	[_father addChildrenObject:_child1];
+	
     [_father addChildrenObject:_child1];
 	[_father addChildrenObject:_child2];
 	[_father addChildrenObject:_child3];
 	[_father addChildrenObject:_child4];
     [_father addChildrenObject:_child5];
+    [_father addChildrenObject:_child6];
 	
     
     [_mother addChildrenObject:_child1];

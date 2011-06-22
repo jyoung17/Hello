@@ -10,70 +10,132 @@
 #import "Father.h"
 #import "Mother.h"
 #import "Child.h"
+#import "CoreSpitterAppDelegate.h"
+
 
 @implementation SecondView
 
 @synthesize managedObjectContext;
 
+@synthesize nameField;
+@synthesize resultServerTextView;
 
-- (NSManagedObjectContext*) managedObjectContext
-{
-	if(managedObjectContext == nil)
-	{
-		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
-		NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0]: nil;
-        NSURL *storeURL = [NSURL fileURLWithPath:[basePath stringByAppendingPathComponent:@"Family.sqlite"]];
-        NSError *error;
-		NSPersistentStoreCoordinator* persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc]
-																	initWithManagedObjectModel:[NSManagedObjectModel mergedModelFromBundles:nil]];
-		
-		if (![persistentStoreCoordinator //<label id="code.app.del.psc.config"/>
-			  addPersistentStoreWithType:NSSQLiteStoreType 
-			  configuration:nil 
-			  URL:storeURL 
-			  options:nil 
-			  error:&error]) {
-			NSLog(@"Persistent store...");
-		}  
-		managedObjectContext = [[NSManagedObjectContext alloc] init];
-		[managedObjectContext setPersistentStoreCoordinator:persistentStoreCoordinator];
-		
-	}
-	return managedObjectContext;
+- (void) whats {
+CoreSpitterAppDelegate *appDelegate = (CoreSpitterAppDelegate*)[[UIApplication sharedApplication] delegate];
+NSManagedObjectContext *context = appDelegate.managedObjectContext;
+
+NSFetchRequest * request = [[NSFetchRequest alloc] init];
+[request setEntity:[NSEntityDescription entityForName:@"Child" inManagedObjectContext:context]];
+NSError * error = nil;
+NSArray *results = [context executeFetchRequest:request error:&error];
+[request release];
+
+if (error) {
+    NSLog(@"ERROR: %@ %@", [error localizedDescription], [error userInfo]);
 }
 
-- (void) OutputData
-
-{
-
-    NSFetchRequest* _fR = [[NSFetchRequest alloc] init];
-    NSEntityDescription *en = [NSEntityDescription entityForName:@"Child" inManagedObjectContext:self.managedObjectContext];
-    [_fR setEntity:en];
-    NSArray* _childs = [self.managedObjectContext executeFetchRequest:_fR error:nil];
-   for (int i = 0; i < [_childs count]; i++) {
-        Child* _child = (Child*)[_childs objectAtIndex:i];
-      
-       NSLog(@"Name: %@", _child.Name);
-   }
+if (results == nil) {
+    NSLog(@"No results found");
+    //entryObj = nil;
+}
+else {
+    NSLog(@"results %d", [results count]);
+}
     
-}
-
-- (IBAction)pressmed
-{
-    NSLog(@"You pressed the button");
-    [self OutputData];
+   	NSString *aux = [resultServerTextView.text stringByAppendingString:[NSString stringWithFormat:@"\n"]];
+	[resultServerTextView setText:aux];  
+    // NSMutableArray *namepool = [NSMutableArray array];
     
-}
-
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    for(int kk = 0; kk <[results count]; kk++)
+    {
+        Child* result = (Child*)[results objectAtIndex:kk];
+		NSLog(@"_father.name: %@", result.Name);
+        //[namepool addObject: result.Name];
+        aux = [resultServerTextView.text stringByAppendingString:[NSString stringWithFormat:@"\n   %i) %@:", kk, result.Name]];
+            [resultServerTextView setText:aux];
+        
     }
-    return self;
+    
+	 
+   
+
 }
+
+//-(void) soutput
+//{
+//
+//    NSMutableArray *namepool = [NSMutableArray array];
+//    
+//    
+//    NSFetchRequest* _fR = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *en = [NSEntityDescription entityForName:@"Child" inManagedObjectContext:self.managedObjectContext];
+//    [_fR setEntity:en];
+//    NSArray* _childs = [self.managedObjectContext executeFetchRequest:_fR error:nil];
+//   for (int i = 0; i < [_childs count]; i++) {
+//        Child* _child = (Child*)[_childs objectAtIndex:i];
+//       //nn[i] = _child.Name;
+//       [namepool addObject:_child.Name];
+//   }
+//    
+
+
+//NSLog(@"Your string array is about %@", namepool);
+
+//    NSLog(@" person 1 :%@",[namepool objectAtIndex:1]);
+//    NSLog(@" person 1 :%@",[namepool objectAtIndex:2]);
+//    NSLog(@" person 1 :%@",[namepool objectAtIndex:3]);
+//    NSLog(@" person 1 :%@",[namepool objectAtIndex:4]);
+
+
+-(IBAction) pressmed
+{
+    
+    [self whats];
+    
+   
+    
+}
+
+-(IBAction)entername
+{
+    NSString *nameEntered = nameField.text;
+    NSLog(@"The name you entered is: %@", nameEntered);
+CoreSpitterAppDelegate *appDelegate = (CoreSpitterAppDelegate*)[[UIApplication sharedApplication] delegate];
+NSManagedObjectContext *context = appDelegate.managedObjectContext;    
+    
+    Father* _father2 = (Father*)[NSEntityDescription insertNewObjectForEntityForName:@"Father" inManagedObjectContext:context];
+    _father2.Name = @"Youself";
+    
+    
+    Child* _child7 = (Child*)[NSEntityDescription insertNewObjectForEntityForName:@"Child" inManagedObjectContext:context];
+    _child7.Name = nameEntered;
+    
+    [_father2 addChildrenObject:_child7];
+    
+    
+    
+}
+
+//-(void)up
+//{
+//    CoreSpitterAppDelegate *appDelegate = (CoreSpitterAppDelegate*)[[UIApplication sharedApplication] delegate];
+//    NSManagedObjectContext *context = appDelegate.managedObjectContext;
+//    
+//    Father* _father2 = (Father*)[NSEntityDescription insertNewObjectForEntityForName:@"Father" inManagedObjectContext:context];
+//    _father2.Name = @"Youself";
+//    
+//    
+//    Child* _child7 = (Child*)[NSEntityDescription insertNewObjectForEntityForName:@"Child" inManagedObjectContext:context];
+//    _child7.Name = @"Bmilt";
+//    
+//    [_father2 addChildrenObject:_child7];
+//}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+	[textField resignFirstResponder];
+	return YES;
+}
+
 
 - (void)dealloc
 {
@@ -84,8 +146,7 @@
 {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
+  
 }
 
 #pragma mark - View lifecycle
@@ -93,14 +154,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    //[self up];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -110,3 +169,5 @@
 }
 
 @end
+
+
